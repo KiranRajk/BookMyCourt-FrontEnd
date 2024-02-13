@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Authorization.css'
 import axios from 'axios'
-function SignUp() {
+function SignUp({toggleBox}) {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -78,6 +78,8 @@ function SignUp() {
 
         <label htmlFor="">Confirm Password</label>
         <input type="password" name='confirm-password' value={confpass} onChange={handleConfPass} minLength={5} />
+
+        <p>Already registered user? <span><i onClick={()=>toggleBox('login')}>Login here</i></span></p>
          
         <button className='btn btn-primary mt-3 ' onClick={doSignUp}>Sign Up</button>
     </div>
